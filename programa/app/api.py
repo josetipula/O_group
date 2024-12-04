@@ -138,6 +138,6 @@ async def cancel_ticket(ticket: TicketRequest):
         return {"message": "Ticket canceled successfully."}
 
     except sqlite3.DatabaseError as e:
-        raise HTTPException(status_code=500, detail="Database error: " + str(e))
+        raise HTTPException(status_code=500, detail="error: " + str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail="Internal server error: " + str(e))
